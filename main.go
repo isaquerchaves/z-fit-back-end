@@ -14,7 +14,8 @@ func init() {
 func main() {
 	app := gin.Default()
 
-	app.GET("/muscle", Muscle.GetAllMuscle)
+	app.GET("/muscles", Muscle.GetAllMuscle)
+	app.GET("/muscle/:id", Muscle.GetMuscle)
 
 	app.Run("localhost:3001")
 }

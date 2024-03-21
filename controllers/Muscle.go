@@ -15,3 +15,14 @@ func GetAllMuscle(c *gin.Context) {
 		"muscles": muscle,
 	})
 }
+
+func GetMuscle(c *gin.Context) {
+	id := c.Param("id")
+
+	var muscle models.Muscle
+	config.DB.First(&muscle, "id = ?", id)
+
+	c.JSON(200, gin.H{
+		"muscle": muscle,
+	})
+}
