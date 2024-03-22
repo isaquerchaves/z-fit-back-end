@@ -20,7 +20,6 @@ func GetAllMuscle(c *gin.Context) {
 func GetMuscle(c *gin.Context) {
 	id := c.Param("id")
 
-	// Criar uma nova sessão para garantir que o filtro não afete outras consultas
 	session := config.DB.Session(&gorm.Session{})
 
 	var muscle models.Muscle
