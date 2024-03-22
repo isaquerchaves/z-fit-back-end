@@ -17,5 +17,7 @@ func main() {
 	app.GET("/muscles", Muscle.GetAllMuscle)
 	app.GET("/muscle/:id", Muscle.GetMuscle)
 
+	app.GET("/exercises", Muscle.GetAllExercise)
+
 	app.Run("localhost:3001")
 }
