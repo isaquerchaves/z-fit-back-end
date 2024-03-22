@@ -1,4 +1,4 @@
-package Muscle
+package controllers
 
 import (
 	"api/config"
