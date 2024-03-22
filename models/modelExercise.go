@@ -49,6 +49,7 @@ type Exercise struct {
 	Slug         string      `gorm:"column:slug"`
 	MuscleID     string      `gorm:"column:muscleId"`
 	Name         string      `gorm:"column:name"`
+	DeletedAt    string      `gorm:"column:deleted_at"`
 }
 
 func (Exercise) TableName() string {
