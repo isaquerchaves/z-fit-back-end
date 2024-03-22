@@ -16,7 +16,4 @@ func ConnectToDb() {
 	if err != nil {
 		log.Fatal("Failed to connect to the database")
 	}
-
-	// Sobrescreve o comportamento padrão do GORM para desativar soft delete globalmente
-	DB = DB.Session(&gorm.Session{SkipDefaultTransaction: true}).Unscoped()
 }
