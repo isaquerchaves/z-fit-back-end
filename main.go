@@ -2,7 +2,7 @@ package main
 
 import (
 	"api/config"
-	Muscle "api/controllers"
+	controllers "api/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,10 +14,11 @@ func init() {
 func main() {
 	app := gin.Default()
 
-	app.GET("/muscles", Muscle.GetAllMuscle)
-	app.GET("/muscle/:id", Muscle.GetMuscle)
+	app.GET("/muscles", controllers.GetAllMuscle)
+	app.GET("/muscle/:id", controllers.GetMuscle)
 
-	app.GET("/exercises", Muscle.GetAllExercise)
+	app.GET("/exercises", controllers.GetAllExercise)
+	app.GET("exercise/:id", controllers.GetExercise)
 
 	app.Run("localhost:3001")
 }
