@@ -3,6 +3,7 @@ package main
 import (
 	"api/config"
 	controllers "api/controllers"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -20,5 +21,7 @@ func main() {
 	app.GET("/exercises", controllers.GetAllExercise)
 	app.GET("exercise/:id", controllers.GetExercise)
 
-	app.Run("localhost:3001")
+	if err := http.ListenAndServe(":3001", nil); err != nil {
+		panic(err)
+	}
 }
