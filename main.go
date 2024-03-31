@@ -32,6 +32,7 @@ func main() {
 	app.GET("/exercises", controllers.GetAllExercise)
 	app.GET("/exercise/id/:id", controllers.GetExercise)
 	app.GET("/exercise/muscleid/:muscle_id", controllers.GetExerciseMuscleId)
+	app.GET("/exercise/muscle/:muscle_slug", controllers.GetExercisesByMuscleSlug)
 
 	app.Run("localhost:3004")
 }

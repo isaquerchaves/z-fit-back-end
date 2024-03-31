@@ -42,3 +42,16 @@ func GetExerciseMuscleId(c *gin.Context) {
 		"exercise": exercise,
 	})
 }
+
+func GetExercisesByMuscleSlug(c *gin.Context) {
+	muscleSlug := c.Param("muscle_slug")
+
+	session := config.DB.Session(&gorm.Session{})
+
+	var exercises []models.Exercise
+	session.Where("muscle_id IN (SELECT id FROM \"Muscle\" WHERE slug = ?)", muscleSlug).Find(&exercises)
+
+	c.JSON(200, gin.H{
+		"exercises": exercises,
+	})
+}
