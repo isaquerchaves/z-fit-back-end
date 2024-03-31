@@ -29,3 +29,16 @@ func GetExercise(c *gin.Context) {
 		"exercise": exercise,
 	})
 }
+
+func GetExerciseMuscleId(c *gin.Context) {
+	muscle_id := c.Param("muscle_id")
+
+	session := config.DB.Session(&gorm.Session{})
+
+	var exercise []models.Exercise
+	session.Find(&exercise, "muscle_id = ?", muscle_id)
+
+	c.JSON(200, gin.H{
+		"exercise": exercise,
+	})
+}

@@ -31,6 +31,7 @@ func main() {
 
 	app.GET("/exercises", controllers.GetAllExercise)
 	app.GET("/exercise/id/:id", controllers.GetExercise)
+	app.GET("/exercise/muscleid/:muscle_id", controllers.GetExerciseMuscleId)
 
 	app.Run("localhost:3004")
 }
