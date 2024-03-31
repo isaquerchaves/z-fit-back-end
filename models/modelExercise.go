@@ -47,7 +47,7 @@ type Exercise struct {
 	Instructions string      `gorm:"column:instructions"`
 	Image        MultiString `gorm:"type:text"`
 	Slug         string      `gorm:"column:slug"`
-	MuscleID     string      `gorm:"column:muscleId"`
+	MuscleID     string      `gorm:"column:muscle_id"`
 	Name         string      `gorm:"column:name"`
 	DeletedAt    string      `gorm:"column:deleted_at"`
 }
