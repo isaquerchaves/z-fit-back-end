@@ -27,12 +27,7 @@ func main() {
 	})
 
 	app.GET("/muscles", controllers.GetAllMuscle)
-	app.GET("/muscle/:id", controllers.GetMuscle)
-
-	app.GET("/exercises", controllers.GetAllExercise)
-	app.GET("/exercise/id/:id", controllers.GetExercise)
-	app.GET("/exercise/muscleid/:muscle_id", controllers.GetExerciseMuscleId)
-	app.GET("/exercise/muscle/:muscle_slug", controllers.GetExercisesByMuscleSlug)
+	app.GET("/exercise/:muscle_slug", controllers.GetExercisesByMuscleSlug)
 
 	app.Run("localhost:3004")
 }
