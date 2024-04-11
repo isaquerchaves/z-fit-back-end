@@ -1,0 +1,10 @@
+{
+  "name": "my-gin-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "go run main.go"
+  },
+  "dependencies": {
+    "go": "^1.17.0"
+  }
+}
