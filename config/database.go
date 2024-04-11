@@ -17,7 +17,7 @@ func ConnectToDb() {
 		log.Fatal("Error loading .env file")
 	}
 
-	dsn := "host=" + os.Getenv("aws-0-us-east-1.pooler.supabase.com") + " user=" + os.Getenv("postgres.fqbbbpnevfsjzudrujnq") + " password=" + os.Getenv("M9a&iSRKp2?sa5!") + " dbname=" + os.Getenv("postgres") + " port=" + os.Getenv("5432") + " sslmode=" + os.Getenv("disable")
+	dsn := "host=" + os.Getenv("DB_HOST") + " user=" + os.Getenv("DB_USER") + " password=" + os.Getenv("DB_PASSWORD") + " dbname=" + os.Getenv("DB_NAME") + " port=" + os.Getenv("DB_PORT") + " sslmode=" + os.Getenv("DB_SSLMODE")
 
 	// Conectar ao banco de dados
 	var err error
