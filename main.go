@@ -29,5 +29,7 @@ func main() {
 	app.GET("/muscles", controllers.GetAllMuscle)
 	app.GET("/exercise/:muscle_slug", controllers.GetExercisesByMuscleSlug)
 
+	app.GET("/split", controllers.GetTrainingSplit)
+
 	app.Run("localhost:3004")
 }
